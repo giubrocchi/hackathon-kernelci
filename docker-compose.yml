@@ -97,8 +97,11 @@ services:
 
     dashboard_db:
         image: postgres:17
+        ports:
+            - "5432:5432"
         env_file:
             - .env
+            - .env.db
         volumes:
             - dashboard-db-data:/var/lib/postgresql/data
         networks:
